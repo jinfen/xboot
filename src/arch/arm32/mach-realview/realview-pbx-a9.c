@@ -1,5 +1,5 @@
 /*
- * realview-pb-a8.c
+ * realview-pbx-a9.c
  *
  * Copyright(c) 2007-2018 Jianjun Jiang <8192542@qq.com>
  * Official site: http://xboot.org
@@ -107,9 +107,9 @@ static int mach_keygen(struct machine_t * mach, const char * msg, void * key)
 	return 0;
 }
 
-static struct machine_t realview_pb_a8 = {
-	.name 		= "realview-pb-a8",
-	.desc 		= "ARM RealView Platform Baseboard For Cortex-A8",
+static struct machine_t realview_pbx_a9 = {
+	.name 		= "realview-pbx-a9",
+	.desc 		= "ARM RealView Platform Baseboard Explore for Cortex-A9",
 	.detect 	= mach_detect,
 	.memmap		= mach_memmap,
 	.shutdown	= mach_shutdown,
@@ -121,15 +121,15 @@ static struct machine_t realview_pb_a8 = {
 	.keygen		= mach_keygen,
 };
 
-static __init void realview_pb_a8_machine_init(void)
+static __init void realview_pbx_a9_machine_init(void)
 {
-	register_machine(&realview_pb_a8);
+	register_machine(&realview_pbx_a9);
 }
 
-static __exit void realview_pb_a8_machine_exit(void)
+static __exit void realview_pbx_a9_machine_exit(void)
 {
-	unregister_machine(&realview_pb_a8);
+	unregister_machine(&realview_pbx_a9);
 }
 
-machine_initcall(realview_pb_a8_machine_init);
-machine_exitcall(realview_pb_a8_machine_exit);
+machine_initcall(realview_pbx_a9_machine_init);
+machine_exitcall(realview_pbx_a9_machine_exit);
